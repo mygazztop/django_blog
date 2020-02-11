@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <style type="text/css">
+        #footer {
+            position: fixed; /* Фиксированное положение */
+            left: 0;
+            bottom: 0; /* Левый нижний угол */
+            padding: 10px; /* Поля вокруг текста */
+            background: #000000; /* Цвет фона */
+            color: #FFFFFF; /* Цвет текста */
+            width: 100%; /* Ширина слоя */
+        }
+
+        #navbar ul {
+            display: none;
+            background-color: #f90;
+            position: absolute;
+            top: 100%;
+        }
+
+        #navbar li:hover ul {
+            display: block;
+        }
+
+        #navbar, #navbar ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        #navbar {
+            height: 30px;
+            background-color: #666;
+            padding-left: 25px;
+            min-width: 470px;
+        }
+
+        #navbar li {
+            float: left;
+            position: relative;
+            height: 100%;
+        }
+
+        #navbar li a {
+            display: block;
+            padding: 6px;
+            width: 100px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        #navbar ul li {
+            float: none;
+        }
+
+        #navbar li:hover {
+            background-color: #f90;
+        }
+
+        #navbar ul li:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+
+<body>
+{% block menu %}
+    <ul id="navbar">
+        <li><a href="http://127.0.0.1:8000">Главная</a></li>
+        <li><a href="http://127.0.0.1:8000/contacts">Контакты</a></li>
+        <li><a href="http://127.0.0.1:8000/about">О сайте</a></li>
+    </ul>
+    <br>
+{% endblock %}
+
+{% block info %}
+    <a href="https://riders-on-the-storm.itch.io/final-hope">КАЧАЙТЕ НАШУ ИГРУ!</a>
+{% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+        <a href="{% url 'post' post.id %}"><h1>{{ post.title }}</h1></a>
+        <p>{{ post.annotation }}</p>
+{#        <p>#}
+{#            Теги: {% for keyword in post.key_words %}#}
+{#                {{ keyword }}#}
+{#            {% endfor %}#}
+{#        </p>#}
+
+    {% endfor %}
+{% endblock %}
+
+
+{% block bottom_panel %}
+    <div id="footer">
+        &copy; Михаил Муратов, 2020
+    </div>
+{% endblock %}
+</body>
+</html>

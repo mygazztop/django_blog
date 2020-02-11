@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <p>{{ text }}</p>
+    <p><font size="5"><b><i>
+       Теги: {% for keyword in key_words %}
+                 {{ keyword.key_word }},
+             {% endfor %}
+    </p></b></i></font>
+
+{% endblock %}
