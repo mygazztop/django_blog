@@ -19,8 +19,8 @@ from django_blog.apps.my_blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('about/', views.about),
-    path('contacts/', views.contacts),
+    path('about/', views.about, name='about'),
+    path('contacts/', views.contacts, name='contacts'),
     re_path(r'^post/(?P<id>\d+)$', views.post, name='post'),
-    path('', views.index),
+    path('', views.index, name='index'),
 ]
