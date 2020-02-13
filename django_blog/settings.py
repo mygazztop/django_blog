@@ -25,7 +25,7 @@ SECRET_KEY = 't7pfw=mk1e)2$l8+k#a&%h#3jn1=r%h^49wy06kk%8(6kijcuq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mygazztop.pythonanywhere.com']
 
 
 # Application definition
