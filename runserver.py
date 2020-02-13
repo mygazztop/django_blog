@@ -9,3 +9,11 @@ if 'No changes detected' in str(subprocess.check_output('python manage.py makemi
     subprocess.call('python manage.py runserver', shell=True)
 else:
     print('You have to migrate: python manage.py migrate')
+
+
+'''
+cd /home/mygazztop/mygazztop.pythonanywhere.com/django_blog
+git pull
+touch /var/www/mygazztop.pythonanywhere.com _wsgi.py
+https://www.pythonanywhere.com/user/mygazztop/webapps/#tab_id_mygazztop_pythonanywhere_com
+'''

@@ -16,6 +16,7 @@ class Post(models.Model):
     annotation = models.CharField(max_length=1000)
     text = models.TextField()
     key_words = models.ManyToManyField(KeyWord, blank=True)
+    img = models.ImageField(upload_to='static/img', verbose_name='фото', blank=True)
 
     def __str__(self):
         return self.title

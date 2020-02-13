@@ -84,6 +84,7 @@
 {% block content %}
     {% for post in posts %}
         <a href="{% url 'post' post.id %}"><h1>{{ post.title }}</h1></a>
+        <img src="{{ post.img }}" width="400">
         <p>{{ post.annotation }}</p>
 {#        <p>#}
 {#            Теги: {% for keyword in post.key_words %}#}

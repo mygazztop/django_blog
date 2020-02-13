@@ -22,5 +22,5 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('contacts/', views.contacts, name='contacts'),
     re_path(r'^post/(?P<id>\d+)$', views.post, name='post'),
-    path('', views.index, name='index'),
+    path('', views.index, name='index')
 ]
