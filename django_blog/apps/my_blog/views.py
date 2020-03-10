@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import random
-from django_blog.apps.my_blog.models import Post
+from django_blog.apps.my_blog.models import Post, Author
 
 
 def index(request):
@@ -16,7 +16,8 @@ def post(request, id):
         'id': post.id,
         'title': post.title,
         'text': post.text,
-        'key_words': post.key_words.all()
+        'key_words': post.key_words.all(),
+        'author': post.author
     }
     return render(request, 'post.html', context)
 
